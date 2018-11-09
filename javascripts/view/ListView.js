@@ -2,6 +2,8 @@
 test = ( function () {
 	//
 	function ListView(data) {
+		console.log("data");
+		console.log(data);
 		var ul_node = document.getElementById('person_list_id');
 		this.root = ul_node;
 		this.content = data;
@@ -22,9 +24,9 @@ test = ( function () {
 		//this.createChildNodeDOMApi();
 
 		// Option 2
-		this.createChildNodeHandlebars(); 
+		this.createChildNodeHandlebars();
 	}
-
+/*
 	ListView.prototype.createChildNodeDOMApi = function() {
 		// empty child nodes
 		while (this.root.firstChild) {
@@ -38,6 +40,7 @@ test = ( function () {
 			this.root.appendChild(li_node);
 		}
 	}
+	*/
 
 	if (window.testApp == undefined) {
 		window.testApp = {};

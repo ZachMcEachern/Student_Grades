@@ -33,6 +33,8 @@ var createPerson = (function() {
 			console.log(test);
 			// searches through the Peron list and finds all students with matching last name?
 			var found_list = searchStudent(student_ln);
+			console.log("found_list");
+			console.log(found_list);
 
 			// create the view... HOW????
 			var list_view = new test.view.ListView(found_list);
@@ -43,6 +45,7 @@ var createPerson = (function() {
 		PersonPageControl();
 	});
 
+/*
 // Option 2 - Use onSubmit attribute to register event handler
 	function createPerson(event) {
 		console.log('Invoking createPerson() handler.');
@@ -66,6 +69,7 @@ var createPerson = (function() {
   		var list_view = new test.view.ListView(p_obj.getAllPerson());
 
 	}
+	*/
 
 	function searchStudent(last_name) {
 		console.log("invoking the searchStudent function");
