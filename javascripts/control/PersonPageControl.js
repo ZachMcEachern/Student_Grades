@@ -26,8 +26,10 @@ var createPerson = (function() {
 
 		// define a new event handler for the search button.
 		search_elm.addEventListener('click', function(event){
+			console.log("the search button was clicked and activated the eventHandler");
 			// grabs the value that is in the text box when user clicks search.
 			var student_ln = document.getElementById('ln_id').value;
+			console.log(student_ln);
 			console.log(test);
 			// searches through the Peron list and finds all students with matching last name?
 			var found_list = test.model.Person.searchStudent(student_ln);

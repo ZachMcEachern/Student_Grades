@@ -17,7 +17,7 @@ test = (function() {
 	}
 
 	//Create student name and grades for Amy Gonzalez
-	var student1 = new Person('Amy','Gonzalez');
+	var student1 = new Person('Amy','Smith');
 	student1.add(new Grade('Social Studies','B'));
 	student1.add(new Grade('Math','A'));
 	student1.add(new Grade('Language Arts','B'));
@@ -38,12 +38,12 @@ test = (function() {
 	student3.add(new Grade('Science','A'));
 
 	// Create Array of Students
-	var student_list = new Array();
+	var person_set = new Array();
 
-	student_list.push(student1);
- 	student_list.push(student2);
- 	student_list.push(student3);
- 	console.log(student_list);
+	person_set.push(student1);
+ 	person_set.push(student2);
+ 	person_set.push(student3);
+ 	console.log(person_set);
 	//
 	Person.prototype.getString = function() {
 		return this.first_name + " " + this.last_name;
@@ -65,6 +65,7 @@ test = (function() {
 	}
 
 	Person.prototype.searchStudent = function(last_name) {
+		console.log("invoking the searchStudent function");
 		var found_students = new Array();
 
 		for (let person of person_set) {
