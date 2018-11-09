@@ -19,6 +19,7 @@ test = ( function () {
 			//console.log(html_str);
 			this.root.innerHTML = html_str;
 		}
+		this.createChildNodeHandlebars();
 	}
 
 		// this is the View module for the table grade layout.
@@ -43,13 +44,15 @@ test = ( function () {
 				//console.log(html_str);
 				this.root.innerHTML = html_str;
 			}
+			this.createChildNodeHandlebars();
+		}
 
 		// Option 1
 		//this.createChildNodeDOMApi();
 
 		// Option 2
-		this.createChildNodeHandlebars();
-	}
+
+
 /*
 	ListView.prototype.createChildNodeDOMApi = function() {
 		// empty child nodes
