@@ -2,6 +2,7 @@ var createPerson = (function() {
 
 // Option 1 - Use addEventListener to register event handler
 	function PersonPageControl() {
+		/* Prof's code
 		var add_elm = document.getElementById('add_person_id');
 
 		// define the event handler for Add button
@@ -17,14 +18,14 @@ var createPerson = (function() {
 			// Create the view
   			var list_view = new test.view.ListView(p_obj.getAllPerson());
 		});
-
+*/
 		// THIS IS MY NEW STUFF THAT I AM ADDING.
 
 		// link the search button to a JS variable.
 		var search_elm = document.getElementById('search_person_id');
 
 		// define a new event handler for the search button.
-		search_elm.addEventListener('click', function(event)){
+		search_elm.addEventListener('click', function(event){
 			// grabs the value that is in the text box when user clicks search.
 			var student_ln = document.getElementById('ln_id').value;
 			console.log(test);
@@ -33,7 +34,7 @@ var createPerson = (function() {
 
 			// create the view... HOW????
 			var list_view = new test.view.ListView(found_list);
-		}
+		});
 	}
 	// make sure the page is fully loaded before registering event handler
 	window.addEventListener('load', function(event) {
