@@ -64,6 +64,11 @@ test = (function() {
 		// console.log(person_set);
 	}
 
+	// return the report card of the student.
+	Person.prototype.getReportCard = function () {
+		return this.report_card;
+	}
+
 /*
 	Person.prototype.searchStudent = function(last_name) {
 		console.log("invoking the searchStudent function");
