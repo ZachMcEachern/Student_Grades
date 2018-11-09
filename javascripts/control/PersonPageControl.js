@@ -32,7 +32,7 @@ var createPerson = (function() {
 			console.log(student_ln);
 			console.log(test);
 			// searches through the Peron list and finds all students with matching last name?
-			var found_list = test.model.Person.searchStudent(student_ln);
+			var found_list = searchStudent(student_ln);
 
 			// create the view... HOW????
 			var list_view = new test.view.ListView(found_list);
@@ -65,6 +65,23 @@ var createPerson = (function() {
 		// Create the view
   		var list_view = new test.view.ListView(p_obj.getAllPerson());
 
+	}
+
+	function searchStudent(last_name) {
+		console.log("invoking the searchStudent function");
+		var found_students = new Array();
+
+		var p_obj = new test.model.Person();
+		var listPerson = p_obj.getAllPerson();
+
+		for (let person of listPerson) {
+			if (person.getLastName() == last_name) {
+				found_students.push(person);
+				console.log(found_students);
+			}
+		}
+
+		return found_students;
 	}
 
 	return createPerson;

@@ -64,6 +64,7 @@ test = (function() {
 		// console.log(person_set);
 	}
 
+/*
 	Person.prototype.searchStudent = function(last_name) {
 		console.log("invoking the searchStudent function");
 		var found_students = new Array();
@@ -76,6 +77,7 @@ test = (function() {
 
 		return found_students;
 	}
+	*/
 
 	if (window.testApp == undefined) {
 		window.testApp = {};
