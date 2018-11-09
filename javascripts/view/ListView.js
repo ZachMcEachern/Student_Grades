@@ -19,8 +19,9 @@ test = ( function () {
 			//console.log(html_str);
 			this.root.innerHTML = html_str;
 		}
+	}
 
-		// this is the listView module for the table grade layout.
+		// this is the View module for the table grade layout.
 		// the data being passed to this would be the array of grades.
 		function TableView(data) {
 			console.log("data");
