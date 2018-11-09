@@ -1,15 +1,14 @@
 
 test = ( function () {
-	//
 		// this is the View module for the table grade layout.
 		// the data being passed to this would be the array of grades.
 		function TableView(data) {
-
-			//need to change to table stuff.
+      // grabs the template for the table layout.
 			var table_node = document.getElementById('grade_table_id');
 			this.root = table_node;
 			this.content = data;
 
+      // calls the handlebars framework
 			this.createChildNodeHandlebars = function() {
 				//console.log('Invoking createChildNodeHandlebars method');
 				var source = document.getElementById('s-grade-template').innerHTML;

@@ -16,7 +16,7 @@ test = (function() {
 		this.letter_grade = lg;
 	}
 
-	//Create student name and grades for Amy Gonzalez
+	//Create student name and grades for Amy Smith
 	var student1 = new Person('Amy','Smith');
 	student1.add(new Grade('Social Studies','B'));
 	student1.add(new Grade('Math','A'));

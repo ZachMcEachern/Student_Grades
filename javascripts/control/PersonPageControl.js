@@ -1,10 +1,6 @@
 var createPerson = (function() {
 
-// Option 1 - Use addEventListener to register event handler
 	function PersonPageControl() {
-
-		// THIS IS MY NEW STUFF THAT I AM ADDING.
-
 		// link the search button to a JS variable.
 		var search_elm = document.getElementById('search_person_id');
 
@@ -13,15 +9,16 @@ var createPerson = (function() {
 			//console.log("the search button was clicked and activated the eventHandler");
 			// grabs the value that is in the text box when user clicks search.
 			var student_ln = document.getElementById('ln_id').value;
-			// searches through the Peron list and finds all students with matching last name?
+			// searches through the Peron list and finds all students with matching last name
 			var found_list = searchStudent(student_ln);
 
-			// create the view... HOW????
+			// passes the array of found students to the list view.
 			var list_view = new test.view.ListView(found_list);
 		});
 
 		// link the list item to a JS variable.
 		var list_elm = document.getElementById('person_list_id');
+		// gets the target that the click event happened on.
 		function getEventTarget(e) {
 				e = e || window.event;
 				return e.target || e.srcElement;
@@ -29,9 +26,7 @@ var createPerson = (function() {
 		// the onclick function handles what li item that is being clicked.
 		list_elm.onclick = function(event) {
 				var target = getEventTarget(event);
-
 				//console.log("the list item was clicked and activated the eventHandler");
-
 				// grab the name of the student that was clicked from the li.
 				var student_name = target.innerHTML;
 
@@ -48,6 +43,7 @@ var createPerson = (function() {
 		PersonPageControl();
 	});
 
+	// searches all the persons in the list and tries to find those with the same last name given.
 	function searchStudent(last_name) {
 		//console.log("invoking the searchStudent function");
 		var found_students = new Array();
@@ -55,6 +51,7 @@ var createPerson = (function() {
 		var p_obj = new test.model.Person();
 		var listPerson = p_obj.getAllPerson();
 
+		// loop through listperson and add the found students to the found_students array.
 		for (let person of listPerson) {
 			if (person.getLastName() == last_name) {
 				found_students.push(person);
@@ -64,6 +61,7 @@ var createPerson = (function() {
 		return found_students;
 	}
 
+	// return the report card of the student who's name was passed to the function.
 	function searchRecs(student_full_name) {
 		//console.log("invoking the searchRec function");
 		var found_students = new Array();
@@ -71,6 +69,7 @@ var createPerson = (function() {
 		var p_obj = new test.model.Person();
 		var listPerson = p_obj.getAllPerson();
 
+		// loop through the list of people until you find a match of the name given.
 		for (let person of listPerson) {
 			if (person.getString() == student_full_name) {
 				return person.getReportCard();
