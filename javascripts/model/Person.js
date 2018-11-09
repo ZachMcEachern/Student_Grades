@@ -70,21 +70,6 @@ test = (function() {
 	}
 
 
-/*
-	Person.prototype.searchStudent = function(last_name) {
-		console.log("invoking the searchStudent function");
-		var found_students = new Array();
-
-		for (let person of person_set) {
-			if (person.getLastName() == last_name) {
-				found_students.push(person);
-			}
-		}
-
-		return found_students;
-	}
-	*/
-
 	if (window.testApp == undefined) {
 		window.testApp = {};
 	}

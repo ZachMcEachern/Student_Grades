@@ -4,8 +4,6 @@ test = ( function () {
 		// this is the View module for the table grade layout.
 		// the data being passed to this would be the array of grades.
 		function TableView(data) {
-			console.log("data");
-			console.log(data);
 
 			//need to change to table stuff.
 			var table_node = document.getElementById('grade_table_id');
@@ -13,14 +11,11 @@ test = ( function () {
 			this.content = data;
 
 			this.createChildNodeHandlebars = function() {
-				console.log('Invoking createChildNodeHandlebars method');
-				//console.log(this.root);
+				//console.log('Invoking createChildNodeHandlebars method');
 				var source = document.getElementById('s-grade-template').innerHTML;
 				var template = Handlebars.compile(source);
 				var context = {'grade' : this.content};
-				//console.log(context);
 				var html_str = template(context);
-				//console.log(html_str);
 				this.root.innerHTML = html_str;
 			}
 			this.createChildNodeHandlebars();
