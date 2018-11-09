@@ -46,19 +46,22 @@ var createPerson = (function() {
 				e = e || window.event;
 				return e.target || e.srcElement;
 		}
+		// the onclick function handles what li item that is being clicked.
 		list_elm.onclick = function(event) {
 				var target = getEventTarget(event);
 				alert(target.innerHTML);
 
 				console.log("the list item was clicked and activated the eventHandler");
 
-				// grab the grades from the student that was clicked within the list.
+				// grab the name of the student that was clicked from the li.
 				var student_name = target.innerHTML;
 				console.log(student_name);
-				// put those grades into an array of grades which it should already be in.
 
+				// search the person_list to get the correct student.
+				var grades_of_found_student = searchRecs(student_name)
+				console.log(grades_of_found_student);
 				// send that list of grades to the TableView.
-				var list_view = new test.view.TableView(found_list);
+				var table_view = new test.view.TableView(grades_of_found_student);
 		};
 
 /* this was the event listener that we tried.
@@ -124,6 +127,21 @@ var createPerson = (function() {
 		}
 
 		return found_students;
+	}
+
+	function searchRecs(student_full_name) {
+		console.log("invoking the searchRec function");
+		var found_students = new Array();
+
+		var p_obj = new test.model.Person();
+		var listPerson = p_obj.getAllPerson();
+
+		for (let person of listPerson) {
+			if (person.getString() == student_full_name) {
+				console.log("Name match");
+				return person.getReportCard();
+			}
+		}
 	}
 
 	return createPerson;
